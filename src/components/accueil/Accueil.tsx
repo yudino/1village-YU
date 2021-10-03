@@ -12,11 +12,27 @@ import { useActivities } from 'src/services/useActivities';
 import PelicoReflechit from 'src/svg/pelico/pelico_reflechit.svg';
 import { getLocalTempHour } from 'src/utils/getLocalTempHour';
 
+const phaseActivities = [[
+  { key: 0, label: 'Toutes', type: [6, 7] },
+  { key: 1, label: 'Indice culturel', type: [6] },
+  { key: 2, label: 'Symbole', type: [7] },
+], [
+  { key: 0, label: 'Toutes', type: [1, 2, 3, 4, 5] },
+  // { key: 9, label: 'Contenu libre', type: [8] },
+  { key: 1, label: 'Énigmes', type: [1] },
+  { key: 2, label: 'Défis', type: [2] },
+  // { key: 10, label: 'Reportage', type: [9] },
+  { key: 3, label: 'Jeux', type: [4] },
+], [
+  { key: 0, label: 'Toutes', type: [10] },
+  { key: 1, label: 'Hymne', type: [10] },
+]];
+
 export const Accueil = () => {
   const { village, selectedPhase, setSelectedPhase } = React.useContext(VillageContext);
   const { user } = React.useContext(UserContext);
   const [filters, setFilters] = React.useState<FilterArgs>({
-    type: 0,
+    type: [],
     status: 0,
     countries: {},
     pelico: true,
@@ -25,21 +41,27 @@ export const Accueil = () => {
   const [localTime, setLocalTime] = React.useState();
 
   React.useEffect(() => {
+    setFilters({
+      type: phaseActivities[selectedPhase - 1][0].type,
+      status: 0,
+      countries: {},
+      pelico: true
+    })
     const asyncFunc = async () => {
-      if (user) {
+      if (user && !localTime && !localTemp) {
         const { time, temp } = await getLocalTempHour(user);
         setLocalTemp(temp);
         setLocalTime(time);
       }
     };
     asyncFunc();
-  }, [user]);
+  }, [user, selectedPhase]);
 
   const { activities } = useActivities({
     page: 0,
     countries: Object.keys(filters.countries).filter((key) => filters.countries[key]),
     pelico: filters.pelico,
-    type: filters.type - 1,
+    type: filters.type,
   });
 
   const PhaseAccueil = () => (
@@ -70,7 +92,7 @@ export const Accueil = () => {
         <>
           {' '}
           <h1>Dernières activités</h1>
-          <Filters countries={village.countries} filters={filters} onChange={setFilters} />
+          <Filters countries={village.countries} filters={filters} onChange={setFilters} phase={selectedPhase} phaseActivities={phaseActivities} />
           <p>Température : {Math.floor(localTemp)}°</p>
           <p>{localTime}</p>
           <Activities activities={activities} withLinks />{' '}

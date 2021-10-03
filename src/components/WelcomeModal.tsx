@@ -17,6 +17,7 @@ import PelicoSearch from 'src/svg/pelico/pelico-search.svg';
 import { ActivityStatus, ActivityType } from 'types/activity.type';
 import type { User } from 'types/user.type';
 import { UserType } from 'types/user.type';
+import { MissingStepModal } from 'src/components/MissingStepModal';
 
 import { CGU } from './CGU';
 import { Flag } from './Flag';
@@ -47,7 +48,7 @@ export const WelcomeModal = () => {
     return countries.find((c) => c.isoCode.toLowerCase() === user.countryCode.toLowerCase());
   }, [countries, user]);
 
-  if (user === null || village === null || user.type >= UserType.OBSERVATOR || user.firstLogin === false) {
+  if (user === null || village === null || user.type >= UserType.OBSERVATOR) {
     return null;
   }
 
@@ -118,7 +119,7 @@ export const WelcomeModal = () => {
     }
   };
 
-  return (
+  return (user.firstLogin ?
     <Modal
       open={true}
       title="Bienvenue à 1Village !"
@@ -319,6 +320,7 @@ export const WelcomeModal = () => {
           </>
         )}
       </div>
-    </Modal>
+    </Modal> :
+        currentStep === 3 && <MissingStepModal />
   );
 };

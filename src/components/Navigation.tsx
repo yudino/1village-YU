@@ -121,7 +121,7 @@ export const Navigation = () => {
 
   const arrayNav = [allStep, stepOne, stepTwo, stepThree];
 
-  return (
+  return (console.log(selectedPhase),
     <nav className="navigation">
       <div style={{ position: 'relative' }}>
         <div
