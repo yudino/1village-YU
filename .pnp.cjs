@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.1"],
             ["@mui/material", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.1"],
             ["@mui/system", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.0"],
-            ["@next/eslint-plugin-next", "npm:12.0.9"],
+            ["@next/eslint-plugin-next", "npm:12.1.6"],
             ["@svgr/webpack", "npm:6.2.0"],
             ["@swc/core", "npm:1.2.139"],
             ["@swc/jest", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:0.2.17"],
@@ -177,7 +177,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mui/icons-material", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.1"],
             ["@mui/material", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.1"],
             ["@mui/system", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:5.3.0"],
-            ["@next/eslint-plugin-next", "npm:12.0.9"],
+            ["@next/eslint-plugin-next", "npm:12.1.6"],
             ["@svgr/webpack", "npm:6.2.0"],
             ["@swc/core", "npm:1.2.139"],
             ["@swc/jest", "virtual:f84dba857fa10247bbb4af28a825f1d91a188c858b2b2b1b4a2d3cfedf850e14647ec99dabfb1535752c99ec0ff164e2ec4fb4c32c822be66b30b3cfa4630990#npm:0.2.17"],
@@ -4383,10 +4383,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@next/eslint-plugin-next", [
-        ["npm:12.0.9", {
-          "packageLocation": "./.yarn/cache/@next-eslint-plugin-next-npm-12.0.9-44831df32b-b28f86f7f7.zip/node_modules/@next/eslint-plugin-next/",
+        ["npm:12.1.6", {
+          "packageLocation": "./.yarn/cache/@next-eslint-plugin-next-npm-12.1.6-36b90e378b-33dcaf71f2.zip/node_modules/@next/eslint-plugin-next/",
           "packageDependencies": [
-            ["@next/eslint-plugin-next", "npm:12.0.9"],
+            ["@next/eslint-plugin-next", "npm:12.1.6"],
             ["glob", "npm:7.1.7"]
           ],
           "linkType": "HARD",
