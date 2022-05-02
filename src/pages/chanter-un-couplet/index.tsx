@@ -48,6 +48,7 @@ const Anthem = () => {
       router.push('/');
     }
   }, [axiosLoggedRequest, router, village]);
+
   React.useEffect(() => {
     getAnthemData().catch(console.error);
   }, [getAnthemData]);
@@ -70,15 +71,11 @@ const Anthem = () => {
   };
 
   if (!anthemActivityData) {
-    return (
-      <Base>
-        <div></div>
-      </Base>
-    );
+    return <Base></Base>;
   }
 
   return (
-    <Base>
+    <>
       <div style={{ width: '100%', padding: '0.5rem 1rem 1rem 1rem' }}>
         <div className="width-900">
           <h1>Découvrez l&apos;hymne de votre village idéal</h1>
@@ -104,7 +101,7 @@ const Anthem = () => {
         </div>
       </div>
       <StepsButton next={onNext} />
-    </Base>
+    </>
   );
 };
 
