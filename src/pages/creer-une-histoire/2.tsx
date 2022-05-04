@@ -146,7 +146,7 @@ const StoryStep2 = () => {
             </Grid>
           </Grid>
         </div>
-        <StepsButton prev={`/creer-une-histoire/1?edit=${activity.id}`} next={onNext} />
+        <StepsButton prev={`/creer-une-histoire/1?edit`} next={onNext} />
       </div>
     </Base>
   );

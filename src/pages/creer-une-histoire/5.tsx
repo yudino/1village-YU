@@ -133,7 +133,7 @@ const StoryStep5 = () => {
             <Grid display="flex" direction="row" alignItems="center" spacing={2}>
               <EditButton
                 onClick={() => {
-                  router.push(`/creer-une-histoire/1?edit=${activity.id}`);
+                  router.push(`/creer-une-histoire/1?edit`);
                 }}
                 status={errorSteps.includes(0) ? 'warning' : 'success'}
                 style={{ position: 'absolute', top: '40%', right: '0.5rem' }}
