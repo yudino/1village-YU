@@ -108,7 +108,7 @@ const ReInventStoryStep5 = () => {
                   {"Modifier à l'étape précédente"}
                 </Button>
               </Link>
-              <Button variant="outlined" color="primary" onClick={onPublish} disabled={isUserObservator}>
+              <Button variant="outlined" color="primary" onClick={onPublish} disabled={isUserObservator || !isValid}>
                 Enregistrer les changements
               </Button>
             </div>
