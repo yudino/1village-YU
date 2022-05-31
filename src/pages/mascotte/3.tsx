@@ -45,7 +45,7 @@ const MascotteStep3 = () => {
       shouldSave.current = false;
       save().catch();
     }
-  }, [data?.fluentLanguages, data?.minorLanguages, data?.wantedForeignLanguages, data?.currencies, save]);
+  }, [save]);
 
   if (!activity) return <Base>Redirecting ...</Base>;
 

@@ -2040,13 +2040,6 @@ export const languages: Language[] = [
     alpha3_t: '',
   },
   {
-    english: 'Provençal, Old (to 1500); Occitan, Old (to 1500)',
-    french: "provençal ancien (jusqu'à 1500); occitan ancien (jusqu'à 1500)",
-    alpha2: '',
-    alpha3_b: 'pro',
-    alpha3_t: '',
-  },
-  {
     english: 'Pushto; Pashto',
     french: 'pachto',
     alpha2: 'ps',
