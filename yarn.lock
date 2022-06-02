@@ -43,7 +43,7 @@ __metadata:
     "@types/mime-types": 2.1.1
     "@types/morgan": 1.9.3
     "@types/multer": 1.4.7
-    "@types/node": 16.11.21
+    "@types/node": 16.11.38
     "@types/nodemailer": 6.4.4
     "@types/nprogress": 0.2.0
     "@types/prettier": 2.4.3
@@ -3612,10 +3612,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.21":
-  version: 16.11.21
-  resolution: "@types/node@npm:16.11.21"
-  checksum: 75b679dc6375cf09bc14a2d1b344be6f3fd8ea50f212b0d60970dc9e175cef45e44c284c716eb9e766ffa52d0c83b689adb3d1911b6dd8649c560b8f77442a22
+"@types/node@npm:16.11.38":
+  version: 16.11.38
+  resolution: "@types/node@npm:16.11.38"
+  checksum: 471df020162098602fd77014c458e84f01f7faff3cddcc2b7739312a8b4f103bc0fab3dfc03641233d9f627c47fd82dfabc9b86413ef680e193c36b9aed322e6
   languageName: node
   linkType: hard
 
