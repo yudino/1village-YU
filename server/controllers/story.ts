@@ -34,18 +34,21 @@ storyController.get({ path: '/all', userType: UserType.TEACHER }, async (req: Re
       .where('image.villageId = :villageId', { villageId })
       .andWhere('image.imageType = :type', { type: ImageType.OBJECT })
       .orderBy('RAND()')
+      .cache(60 * 1000) // 1 minute
       .getMany(),
     AppDataSource.getRepository(Image)
       .createQueryBuilder('image')
       .where('image.villageId = :villageId', { villageId })
       .andWhere('image.imageType = :type', { type: ImageType.PLACE })
       .orderBy('RAND()')
+      .cache(60 * 1000) // 1 minute
       .getMany(),
     AppDataSource.getRepository(Image)
       .createQueryBuilder('image')
       .where('image.villageId = :villageId', { villageId })
       .andWhere('image.imageType = :type', { type: ImageType.ODD })
       .orderBy('RAND()')
+      .cache(60 * 1000) // 1 minute
       .getMany(),
   ]);
 
