@@ -1,3 +1,4 @@
+import { access } from 'fs';
 import path from 'path';
 import supertest from 'supertest';
 import { DataSource } from 'typeorm';
@@ -18,22 +19,38 @@ export const appDataSource = new DataSource({
  * @param auth empty object with token string property
  * @returns auth with token inside
  */
-export function loginUser(auth: { token: string }) {
-  return async function () {
-    const app = await getApp();
-    supertest(app)
-      .post('/login')
-      .send({
-        email: 'teacher1@mail.io',
-        password: 'helloWorld*',
-      })
-      .expect(200)
-      .end(function (err, res) {
-        if (err) throw err;
-        return (auth.token = res.body.token);
-      });
-  };
+export async function loginUser() {
+  const app = await getApp();
+  const response = await supertest(app)
+    .post('/login')
+    .send({
+      username: 'teacher1@mail.io',
+      password: 'helloWorld*',
+    })
+    .expect(200);
+  // .end(function (err, res) {
+  //   if (err) throw err;
+  //   return res.body.accessToken;
+  // });
+  return response.body;
 }
+// export function loginUser() {
+//   return async function () {
+//     const app = await getApp();
+//     supertest(app)
+//       .post('/login')
+//       .send({
+//         username: 'teacher1@mail.io',
+//         password: 'helloWorld*',
+//       })
+//       .expect(200)
+//       .end(function (err, res) {
+//         if (err) throw err;
+//         return res.body.accessToken;
+//       });
+//   };
+// }
+
 /**
  * Mock for fake user to the response for login request
  */
@@ -56,6 +73,13 @@ export const fakeUser = {
   country: { isoCode: 'FR', name: 'France' },
   position: { lat: 48.8863442, lng: 2.380321 },
 };
+
+/**
+ * Mock for the accessToken for User
+ */
+
+export const mockAccessToken =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MjI0NzE4NywiZXhwIjoxNjcyMjYxNTg3fQ.l95f56k9vtXqz1h9E7GUMxfMpVYKnXyyL_hzIjvsEbo';
 
 export const fakeStory = {
   id: 0,
